@@ -1,8 +1,13 @@
 import Image from "next/image";
+import UserCard from "./components/UserCard"
+import ItemCard from "./components/ItemCard"
+import data from "./data.json"
 
 export default function Home() {
   return (
     <div>
+      <>
+
       {/* Report for
       Jeremy Robson
 
@@ -58,6 +63,11 @@ export default function Home() {
       7hrs <!-- monthly -->
       Previous - 11hrs <!-- monthly -->
  */}
+      </>
+      <UserCard/>
+      {data.map((item, i) => (
+        <ItemCard key={i} item={item}/>
+      ))}
 
       <div className="attribution text-sm text-center text-[hsl(228, 45%, 44%)]">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
