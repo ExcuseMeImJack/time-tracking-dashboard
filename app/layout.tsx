@@ -1,15 +1,26 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Rubik } from "next/font/google";
 
+// Google font import for Rubik
+const rubik = Rubik({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--rubik-font",
+  style: "normal",
+  weight: ["300", "400", "500", "600", "700", "800", "900"]
+});
+
+// Local font imports
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
+  variable: "--geist-sans-font",
   weight: "100 900",
 });
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+  variable: "--geist-mono-font",
   weight: "100 900",
 });
 
@@ -26,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${rubik.variable} antialiased`}
       >
         {children}
       </body>
