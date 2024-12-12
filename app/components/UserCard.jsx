@@ -1,12 +1,8 @@
 import Image from 'next/image'
-import React, { useState } from 'react'
 
-function UserCard({ user = "Jeremy Robson", profilePic = "/images/image-jeremy.png" }) {
-
-  const [status, setStatus] = useState("W");
-
+function UserCard({ status, setStatus, user = "Jeremy Robson", profilePic = "/images/image-jeremy.png" }) {
   return (
-    <div className='flex flex-col gap-6  w-48 h-96 bg-dark-blue rounded-b-lg'>
+    <div className='flex flex-col gap-6 w-48 h-96 bg-dark-blue rounded-b-lg'>
       <div className='bg-blue h-60 rounded-xl flex flex-col gap-6 p-6'>
         <div className='relative w-12 h-12 border-white border-2 rounded-full'>
           <Image
