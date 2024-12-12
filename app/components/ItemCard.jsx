@@ -47,10 +47,10 @@ function ItemCard({ item, status }) {
           />
         </div>
       </div>
-      <div className='bg-dark-blue h-36 p-4 rounded-xl flex flex-col justify-between'>
+      <div className='bg-dark-blue h-36 p-4 rounded-xl flex flex-col justify-between relative'>
         <div className='flex justify-between items-center'>
           <p className='text-sm font-semibold'>{title}</p>
-          <div className='mt-2'>
+          <div className='mt-2 hover:cursor-pointer'>
             <Image
               src="images/icon-ellipsis.svg"
               width={12}
@@ -61,6 +61,7 @@ function ItemCard({ item, status }) {
         </div>
         <h1 className='text-4xl'>{determineCurrentTime()}hrs</h1>
         <p className='text-xs text-desaturated-blue'>{`${status === "W" ? "Last Week - " : status === "D" ? "Yesterday - " : "Last Month - "} ${determinePrevTime()}hrs`}</p>
+        <div className="absolute inset-0 bg-desaturated-blue opacity-0 hover:opacity-30 transition-opacity duration-300 hover:cursor-pointer rounded-xl"></div>
       </div>
     </div>
 

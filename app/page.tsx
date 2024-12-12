@@ -11,7 +11,7 @@ export default function Home() {
   const [status, setStatus] = useState("W");
 
   return (
-    <div className="bg-very-dark-blue font-rubik h-screen text-white">
+    <div className="bg-very-dark-blue font-rubik h-screen text-white flex flex-col items-center justify-center gap-16">
       <div className="flex gap-8">
         <UserCard status={status} setStatus={setStatus} />
         <div className="grid grid-cols-3 gap-8">
